@@ -1,0 +1,40 @@
+# SmartMVC
+- url-pattern的配置方式
+	1. 一对一
+	2. /*
+	3. *.后缀  	*.do
+
+- 不同写法的优先级问题
+	1. 原则:
+		1. 谁最像找谁
+		2. *.do的优先级永远是最低的
+
+
+### 注解
+- 注解是JavaSE 1.5 版本提供的一种代码标注技术
+	1. Retention: 指该注解保留的时机
+		1. SOURCE: 该注解存在于.java中,编译后就消失,.class文件中没有该注解
+		2. CLASS: 该注解存在于.class中,类加载后就消失
+		3. RUNTIME: 该注解存在于运行期,类加载后依旧存在
+
+	2. Target: 指定该注解可以添加到哪些位置
+		1. Method: 该注解可以加在方法上
+
+### 反射
+- 功能
+	1. 动态查看一个类中的所有属性和方法
+	2. 动态的加载一个类
+	3. 可以动态的创建一个类的实例
+	4. 可以动态的调用一个对象的方法
+	5. 可以动态的访问私有属性和方法
+
+- API
+	1. 获取Class对象
+		Class cz = String.class;
+		Class cz = obj.getClass();
+		Class cz = Class.forName("包名.类名")
+	2. 查看所有的属性
+		cz.getDeclaredFields()
+		cz.getDeclaredMethods()
+	3. 动态调用一个方法
+		method.invoke(obj, args)
